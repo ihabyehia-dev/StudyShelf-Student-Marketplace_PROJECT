@@ -1,2 +1,3 @@
+<!-- Shared navigation links for administration. -->
 <?php // Shared links on all responsive administrator pages. ?>
 <div class="admin-bar"><div class="container"><span class="admin-bar-title">Admin panel</span><nav aria-label="Admin pages"><a href="<?= e(url('admin/index.php')) ?>">Dashboard</a><a href="<?= e(url('admin/items.php')) ?>">Items</a><a href="<?= e(url('admin/categories.php')) ?>">Categories</a><a href="<?= e(url('admin/messages.php')) ?>">Messages</a><a href="<?= e(url('admin/users.php')) ?>">Users</a><a href="<?= e(url('index.php')) ?>">View site &rarr;</a></nav></div></div>

@@ -1,3 +1,4 @@
+<!-- Shared site footer and page closing markup. -->
 </main>
 <footer class="site-footer">
     <div class="container footer-grid">

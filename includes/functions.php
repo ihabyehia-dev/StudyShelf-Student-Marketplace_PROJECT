@@ -1,4 +1,5 @@
 <?php
+// Common helpers for escaping, sessions, user access and catalog actions.
 function e(?string $text): string
 {
     return htmlspecialchars($text ?? '', ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');

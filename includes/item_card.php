@@ -1,3 +1,4 @@
+<!-- Shared template for a catalog item card. -->
 <?php // Requires $item array from the database. ?>
 <article class="item-card">
     <a href="<?= e(url('item.php?id=' . (int) $item['id'])) ?>" class="item-image-link">

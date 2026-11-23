@@ -1,4 +1,5 @@
 <?php
+// Shared page header and navigation layout.
 $page_title = $page_title ?? 'StudyShelf - Campus Study Market';
 $active_page = $active_page ?? '';
 $flash_message = take_flash();

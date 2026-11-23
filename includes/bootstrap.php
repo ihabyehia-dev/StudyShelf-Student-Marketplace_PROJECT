@@ -1,4 +1,5 @@
 <?php
+// Startup code for page sessions and shared dependencies.
 // Shared application setup for every public and admin page.
 if (session_status() === PHP_SESSION_NONE) {
     session_start([
