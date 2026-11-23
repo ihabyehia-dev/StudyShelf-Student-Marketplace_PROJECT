@@ -1,0 +1,19 @@
+# Keep local credentials and environment settings out of GitHub
+.env
+.env.*
+!.env.example
+config/database.local.php
+
+# IDE / operating system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs, temporary files and private exports
+*.log
+*.tmp
+*.bak
+*.sql.gz
+backups/
+private/
