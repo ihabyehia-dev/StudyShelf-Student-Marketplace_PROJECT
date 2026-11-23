@@ -1,4 +1,5 @@
 <?php
+// Saved catalog items for the signed-in student.
 require_once __DIR__ . '/includes/bootstrap.php';
 require_login();
 $page_title = 'My favorites';

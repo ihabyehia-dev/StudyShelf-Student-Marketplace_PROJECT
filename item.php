@@ -1,4 +1,5 @@
 <?php
+// Item details with related study materials.
 require_once __DIR__ . '/includes/bootstrap.php';
 $id = safe_id($_GET['id'] ?? null);
 $item = $id ? get_item($id) : null;

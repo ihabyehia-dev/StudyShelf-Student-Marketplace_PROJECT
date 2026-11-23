@@ -1,4 +1,5 @@
 <?php
+// Information about the StudyShelf project and its purpose.
 require_once __DIR__ . '/includes/bootstrap.php';
 $page_title = 'About us';
 $active_page = 'about';

@@ -1,4 +1,5 @@
 <?php
+// Save or remove a listing from the student's favorites.
 require_once __DIR__ . '/includes/bootstrap.php';
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405); header('Allow: POST'); exit('Use the Save button.');

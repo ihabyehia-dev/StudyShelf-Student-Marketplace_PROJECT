@@ -1,4 +1,5 @@
 <?php
+// Student profile and account information.
 require_once __DIR__ . '/includes/bootstrap.php';
 require_login();
 $page_title = 'My account';

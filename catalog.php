@@ -1,4 +1,5 @@
 <?php
+// Catalog results with category filters, keyword search and sorting.
 require_once __DIR__ . '/includes/bootstrap.php';
 $page_title = 'Browse items';
 $active_page = 'catalog';

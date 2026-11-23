@@ -1,4 +1,5 @@
 <?php
+// Contact form and submission handling.
 require_once __DIR__ . '/includes/bootstrap.php';
 $page_title = 'Contact';
 $active_page = 'contact';

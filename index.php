@@ -1,4 +1,5 @@
 <?php
+// Home page with featured listings and category links.
 require_once __DIR__ . '/includes/bootstrap.php';
 $page_title = 'Find study essentials';
 $active_page = 'home';
