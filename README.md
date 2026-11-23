@@ -1,155 +1,103 @@
-# StudyShelf - CMPS246 Web Programming Final Project
+# StudyShelf — Student Study Materials Catalog
 
-**University:** Beirut Arab University (BAU)  
-**Course:** CMPS246 - Web Programming  
-**Semester:** Fall 2026/2027  
-**Project topic:** StudyShelf - Student Book Exchange / Study Materials Catalog  
-**Student:** Ihab Yehia (update team details below before submission)
+A responsive **PHP and MySQL web application** for students to browse textbooks, notes, calculators, and other study supplies. Built as a CMPS246 Web Programming project at Beirut Arab University.
 
-## 1. About the project
+This is a **catalog and inquiry system**, not a payment-processing store.
 
-StudyShelf is a simple and responsive web application where students can browse study-related items, register or log in, save favorites, and send questions to the admin. The admin can add, edit, and delete items; manage categories; view registered users; and read contact messages. This is a **university demonstration**, not a real store or payment system.
+## Features
 
-### Technology used
+**For students**
+- Browse items by category, search by keyword, and sort results
+- View item details, prices, descriptions, and related listings
+- Register, log in, and manage a personal profile
+- Save or remove favorite items
+- Send questions through the contact form
 
-- Front end: HTML5, external CSS3, and plain JavaScript
-- Back end: plain PHP 8.1 or newer (no frameworks)
-- Database: MySQL 8+ or MariaDB 10.4+
-- Local server: XAMPP (Apache and MySQL)
-- Integrations: None. Third-party REST APIs are optional in the course instructions.
+**For administrators**
+- View a simple dashboard
+- Add, edit, hide, or delete listings
+- Manage item categories
+- View registered users
+- Read and manage contact messages
 
-## 2. Installation with XAMPP (Windows)
+## Technology
 
-1. Download and install XAMPP (with Apache, MySQL/MariaDB, PHP, and phpMyAdmin).
-2. Extract the ZIP and copy the **CMPS246_StudyShelf** folder to `C:\xampp\htdocs\CMPS246_StudyShelf`.
-3. Open the XAMPP Control Panel and start **Apache** and **MySQL**.
-4. In the browser, open `http://localhost/phpmyadmin/`.
-5. Go to **Import**, select `database/studyshelf.sql`, then click **Import/Go**. It creates the database and sample content automatically.
-6. Check `config/database.php` if your MySQL username/password are not the standard local XAMPP values (`root` / empty password).
-7. Open `http://localhost/CMPS246_StudyShelf/` to use the website.
-8. To open the dashboard, log in as the sample admin account below and click **Admin**.
+| Part | Technology |
+| --- | --- |
+| Frontend | HTML5, CSS3, vanilla JavaScript |
+| Backend | PHP 8.1+ with PDO |
+| Database | MySQL / MariaDB |
+| Local development | XAMPP (Apache + MySQL) |
 
-**Important:** Importing `studyshelf.sql` again deletes and recreates all tables. You will lose any data entered after the previous import. Import it only for the initial setup or when you deliberately want to reset the demo.
+No PHP frameworks are used, so the code is easy to follow.
 
-### Test accounts
+## Getting started on Windows (XAMPP)
+
+1. Download this repository using **Code → Download ZIP** on GitHub, and extract it.
+2. Rename the extracted folder to `CMPS246_StudyShelf`.
+3. Put it inside `C:\xampp\htdocs\`, so you have `C:\xampp\htdocs\CMPS246_StudyShelf\index.php`.
+4. Start **Apache** and **MySQL** in XAMPP.
+5. Open `http://localhost/phpmyadmin/`, choose **Import**, and select `database/studyshelf.sql` from the project folder.
+6. If your MySQL login differs from the default XAMPP settings, update `config/database.php` or the documented environment variables.
+7. Open `http://localhost/CMPS246_StudyShelf/` in your browser.
+
+**Note:** Re-importing `studyshelf.sql` deletes and recreates the demo tables. Only import it on a fresh setup or when you want to reset demo content.
+
+### Demo accounts (local testing only)
 
 | Role | Email | Password |
 | --- | --- | --- |
-| Administrator | `admin@studyshelf.test` | `Admin123!` |
+| Admin | `admin@studyshelf.test` | `Admin123!` |
 | Student | `student@studyshelf.test` | `Student123!` |
 
-The passwords are intentionally simple **test credentials only**. Do not use these accounts or passwords on a public server. In production you must create different accounts and secure the configuration.
+These are sample accounts for a local academic demo. **Do not publish the site with these credentials.**
 
-## 3. Available pages
-
-| Page | File | Purpose |
-| --- | --- | --- |
-| Home | `index.php` | Main landing page, categories, latest items |
-| Browse | `catalog.php` | Search, filter by category, sort by price/date |
-| Details | `item.php` | Description, condition, price, related items, save item |
-| About | `about.php` | Project overview and how it works |
-| Contact | `contact.php` | Form that stores messages in MySQL |
-| Register | `register.php` | New account and password hashing |
-| Login/logout | `login.php` and `logout.php` | PHP session authentication |
-| Account | `profile.php` | User details, update name |
-| Favorites | `favorites.php`, `toggle_favorite.php` | Saved items for each logged-in user |
-| Admin dashboard | `admin/index.php` | Counts and latest item listing |
-| Admin items | `admin/items.php`, `admin/item_form.php`, `admin/item_delete.php` | Create/read/update/delete items |
-| Admin categories | `admin/categories.php` | Create/read/update/delete categories (deletion protected) |
-| Admin messages | `admin/messages.php` | Read, mark as read, delete messages |
-| Admin users | `admin/users.php` | View registered accounts |
-
-## 4. Project directory
+## Code organization
 
 ```text
-CMPS246_StudyShelf/
-|-- index.php, catalog.php, item.php, about.php, contact.php
-|-- register.php, login.php, logout.php, profile.php, favorites.php
-|-- toggle_favorite.php
-|-- admin/
-|   |-- index.php, items.php, item_form.php, item_delete.php
-|   |-- categories.php, messages.php, users.php
-|-- config/database.php
-|-- includes/bootstrap.php, functions.php, header.php
-|-- includes/footer.php, item_card.php, admin_nav.php
-|-- database/studyshelf.sql
-|-- assets/css/style.css
-|-- assets/js/main.js
-|-- assets/images/*.svg
-|-- tests/check_project.py
-|-- README.md, DATABASE_DESIGN.md, TEST_CASES.md
-|-- PRESENTATION_GUIDE.md, SUBMISSION_CHECKLIST.md
+admin/               Admin dashboard and management pages
+assets/css/          Responsive stylesheet
+assets/js/           Client-side interactions and validation
+assets/images/       Original project illustrations (SVG)
+config/database.php  PDO database connection
+database/            SQL schema and sample data
+includes/            Shared page layout and PHP functions
+tests/               Static project checks
+index.php            Home page
+catalog.php          Search, filter, and sort
+item.php             Item details
+register.php         Student registration
+login.php            Login with PHP sessions
+contact.php          Contact and inquiry form
+README.md            This guide
 ```
 
-## 5. Database model
+## Database and security basics
 
-The database has **five related tables**:
+The project uses five connected tables: `users`, `categories`, `items`, `favorites`, and `messages`.
 
-- `users` - accounts and role (`student` or `admin`)
-- `categories` - category information
-- `items` - listing information, linked to `categories` and `users`
-- `favorites` - many-to-many relationship between students and items
-- `messages` - contact form submissions, optionally linked to a user or item
+Key implementation details include:
+- PDO **prepared statements** for database queries
+- `password_hash()` and `password_verify()` for passwords
+- PHP sessions and role checks for admin-only pages
+- CSRF tokens on forms that change data
+- Client- and server-side form validation
+- Escaped output when displaying user-provided text
 
-See `DATABASE_DESIGN.md` for the relationship diagram and field descriptions. All forms that write to the database use PHP prepared statements, a CSRF token, and server-side input validation.
+See [DATABASE_DESIGN.md](DATABASE_DESIGN.md) for the tables and relationships.
 
-## 6. Client- and server-side validation
+## Testing
 
-**JavaScript** checks required fields, formats, and matching passwords before submitting. **PHP** repeats the checks on the server because JavaScript can be disabled or bypassed. Registration stores passwords with `password_hash()`; login verifies with `password_verify()` and creates a PHP session. Admin pages check the session role. User-supplied text is escaped when displayed to prevent HTML injection.
-
-## 7. Test the website before submission
-
-The file `TEST_CASES.md` contains detailed test steps. At minimum, verify:
-
-1. Home page, images, and navigation work at phone and desktop widths.
-2. Category filtering, search, sorting, item details and related items work.
-3. Register a new student, log out, then log in again.
-4. Attempt incorrect login; an error message should appear.
-5. A student cannot access `/admin/index.php`.
-6. Save and unsave an item; favorites update correctly.
-7. Send a contact message; it appears on the admin Messages page.
-8. As admin, add/edit/delete an item and a category. Check that category deletion is blocked while it contains items.
-9. Check there are no browser console errors or broken images.
-10. Inspect keyboard navigation, form labels, contrast, and small-screen layouts.
-
-### Automated syntax and file checks
-
-If Python and PHP are available, from the project directory run:
+Run the static checks from the project directory, with Python and PHP available:
 
 ```bash
 python tests/check_project.py
 ```
 
-This checks the PHP syntax and that expected images/files exist. It does **not** replace a full browser and MySQL integration test.
+The script checks required files, PHP syntax, SQL structure, and illustrations. It does **not** replace checking the website manually with Apache and MySQL running.
 
-## 8. Team contribution plan (fill in with real names)
+Manual scenarios are documented in [TEST_CASES.md](TEST_CASES.md). Extra academic documentation is available in [PRESENTATION_GUIDE.md](PRESENTATION_GUIDE.md) and [SUBMISSION_CHECKLIST.md](SUBMISSION_CHECKLIST.md).
 
-The course allows up to three team members and requires each to explain their portion. Register the actual team and topic with the Lab TA in Week 1.
+## Scope
 
-| Member | Name | Proposed responsibility |
-| --- | --- | --- |
-| 1 | Ihab Yehia | Database, PHP integration, testing, and overall coordination |
-| 2 | Add name if applicable | Front-end HTML/CSS, responsive design |
-| 3 | Add name if applicable | JavaScript, validation, contact/admin pages |
-
-**If working alone:** Keep only Member 1 and make sure your Lab TA permits a one-person team. Do not claim teammates or contributions that did not happen. Update this table after your actual team divides the work.
-
-## 9. Suggested three-week plan
-
-- **Week 1:** Choose/register topic and team; create database SQL, keys, constraints, and main responsive pages. Show these in the first lab checkpoint.
-- **Week 2:** Show registration/login with PHP sessions, items/categories from MySQL, and the responsive admin page.
-- **Week 3:** Finish search/contact, client/server validation, optional admin dashboard, accessibility, testing, README, and final live demo.
-
-The original assignment sets the final submission in the **last lab week of Week 3**. Confirm the exact date with the Lab TA.
-
-## 10. Before submitting
-
-- Update the team names and responsibilities honestly.
-- Demonstrate the site on **your own XAMPP computer** and capture screenshots if your TA wants them.
-- Go through `TEST_CASES.md` and mark the results.
-- Keep the source files and `database/studyshelf.sql` inside the project ZIP.
-- Be ready to explain any function, SQL query, CSS rule, or JavaScript event handler.
-
-All illustrations are original SVG drawings made for this project; they do not need third-party licenses. No external CSS frameworks, image CDN, or external APIs are required.
-
-**Note:** No one can guarantee a particular mark. Final grading depends on how the working application performs during the TA's checkpoints and live demonstration.
+StudyShelf is a university learning project. It has no real payments, shipping system, or production deployment. It is intended to demonstrate full-stack fundamentals rather than operate as a commercial service.
