@@ -101,3 +101,7 @@ Manual scenarios are documented in [TEST_CASES.md](TEST_CASES.md). Extra academi
 ## Scope
 
 StudyShelf is a university learning project. It has no real payments, shipping system, or production deployment. It is intended to demonstrate full-stack fundamentals rather than operate as a commercial service.
+
+## Project layout notes
+
+Each major project directory has its own short README describing its files and responsibilities. The main setup steps are documented above.
