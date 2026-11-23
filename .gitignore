@@ -17,3 +17,11 @@ Thumbs.db
 *.sql.gz
 backups/
 private/
+
+# Local Python test cache
+__pycache__/
+*.pyc
+
+# Editor swap files
+*.swp
+*.swo
