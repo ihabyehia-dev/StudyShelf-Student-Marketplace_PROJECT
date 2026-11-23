@@ -1,4 +1,5 @@
 <?php
+// Form used to create or update an item listing.
 require_once __DIR__ . '/../includes/bootstrap.php';
 require_admin();
 $id = safe_id($_GET['id'] ?? $_POST['id'] ?? 0);

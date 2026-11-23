@@ -1,4 +1,5 @@
 <?php
+// Admin list of registered student accounts.
 require_once __DIR__ . '/../includes/bootstrap.php';
 require_admin();
 $page_title = 'Registered users';

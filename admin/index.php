@@ -1,4 +1,5 @@
 <?php
+// Admin overview with counts and recent listings.
 require_once __DIR__ . '/../includes/bootstrap.php';
 require_admin();
 $page_title = 'Admin dashboard';

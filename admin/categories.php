@@ -1,4 +1,5 @@
 <?php
+// Admin page for creating and organizing catalog categories.
 require_once __DIR__ . '/../includes/bootstrap.php';
 require_admin();
 $page_title = 'Manage categories';

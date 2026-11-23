@@ -1,4 +1,5 @@
 <?php
+// Handles an administrator's item deletion request.
 require_once __DIR__ . '/../includes/bootstrap.php';
 require_admin();
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {

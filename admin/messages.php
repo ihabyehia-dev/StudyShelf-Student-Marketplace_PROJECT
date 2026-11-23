@@ -1,4 +1,5 @@
 <?php
+// Admin view of questions sent through the contact form.
 require_once __DIR__ . '/../includes/bootstrap.php';
 require_admin();
 $page_title = 'Contact messages';

@@ -1,4 +1,5 @@
 <?php
+// Admin list of catalog items.
 require_once __DIR__ . '/../includes/bootstrap.php';
 require_admin();
 $page_title = 'Manage items';
