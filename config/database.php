@@ -7,6 +7,7 @@ define('DB_NAME', getenv('DB_NAME') ?: 'studyshelf');
 define('DB_USER', getenv('DB_USER') ?: 'root');
 define('DB_PASS', getenv('DB_PASS') === false ? '' : getenv('DB_PASS'));
 
+// Use one PDO connection throughout each page request.
 function db(): PDO
 {
     static $connection = null;

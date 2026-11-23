@@ -2,6 +2,7 @@
 -- CAUTION: Importing this file again RESETS ALL DATA in the studyshelf database.
 -- Use MySQL 8+ or MariaDB 10.4+. Import with phpMyAdmin or mysql CLI.
 
+-- The schema and sample records support the local catalog demonstration.
 CREATE DATABASE IF NOT EXISTS studyshelf CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE studyshelf;
 

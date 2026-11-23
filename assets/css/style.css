@@ -1,6 +1,7 @@
 /* StudyShelf - CMPS246 Final Project
    A responsive stylesheet written using plain CSS (no framework).
    Colors, spacing, and breakpoints are grouped here so they are easy to edit. */
+/* Shared design variables used by the layout and components below. */
 :root {
     --navy: #18314d;
     --navy-dark: #10263f;

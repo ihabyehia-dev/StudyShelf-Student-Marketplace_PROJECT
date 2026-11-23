@@ -7,6 +7,7 @@ from pathlib import Path
 import subprocess
 import sys
 
+# Run the checks from any directory; paths are relative to this script.
 ROOT = Path(__file__).resolve().parents[1]
 expected = [
     'index.php','catalog.php','item.php','about.php','contact.php',

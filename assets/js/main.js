@@ -1,4 +1,5 @@
 /* StudyShelf - plain JavaScript for the menu and client-side validation. */
+// Wait until the page is loaded before connecting menus and form controls.
 document.addEventListener('DOMContentLoaded', function () {
     const menuButton = document.querySelector('[data-menu-button]');
     const menu = document.querySelector('[data-menu]');
